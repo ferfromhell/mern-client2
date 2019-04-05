@@ -5,10 +5,10 @@ FROM node:alpine as build-stage
 WORKDIR /app
 
 COPY package*.json /app/
-RUN npm install
+RUN yarn install
 
 COPY ./ /app/
-RUN npm run build
+RUN yarn build
 
 # # # Stage 2 ngnix proxy configuration
 FROM nginx:alpine
