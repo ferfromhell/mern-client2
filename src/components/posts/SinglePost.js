@@ -64,7 +64,7 @@ class SinglePost extends Component {
           </Link>
           <PrintButton id={"postContent"} label={"Print comments"} />
         </div>
-        <div id="postContent">
+        <div id="postContent" singleMode={true}>
           {postContent}
         </div>
       </div>
