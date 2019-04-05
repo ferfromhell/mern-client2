@@ -31,7 +31,6 @@ class PostItem extends Component {
   }
   render() {
     const {post, auth} = this.props;
-    console.log(post);
     let likes = post.likes? post.likes.length: 0; 
     return (
       <Card fluid>
@@ -43,7 +42,6 @@ class PostItem extends Component {
             {post.text}
           </Card.Description>
         </Card.Content>
-        {console.log(post.draw)}
         {post.draw !== undefined? (
           <CanvasDraw 
           disabled

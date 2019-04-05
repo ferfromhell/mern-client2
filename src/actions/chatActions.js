@@ -1,4 +1,4 @@
-import { ADD_MESSAGE, MESSAGE_RECEIVED, ADD_USER, USER_LIST } from './types';
+import { ADD_MESSAGE, ADD_USER, USER_LIST } from './types';
 
 
 let nextMessageId = 0;

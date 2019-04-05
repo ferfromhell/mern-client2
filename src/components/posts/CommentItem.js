@@ -5,7 +5,7 @@ import { Grid, Segment, Image } from 'semantic-ui-react';
 
 class CommentItem extends Component {
   render() {
-    const { comment, postId, auth } = this.props;
+    const { comment } = this.props;
     return (
       <Segment>
         <Grid columns={2} divided>

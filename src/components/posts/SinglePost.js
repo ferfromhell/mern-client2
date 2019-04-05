@@ -7,6 +7,7 @@ import { getPost } from '../../actions/postActions';
 import Loading from '../Loading';
 import CommentForm from "./CommentForm";
 import CommentFeed from './CommentsFeed';
+import PrintButton from './PrintButton';
 
 
 const CardItem = (data) => {
@@ -41,12 +42,6 @@ class SinglePost extends Component {
   }
   
   render() {
-    const  styles = {
-      box:{
-        "width": "90%",margin:"20px auto",
-        border:'1px solid #e6',background:'#fff',textAlign:'center',marginBottom:'1em',padding:'1em'
-      }
-    }
     const { post } = this.props.post;
     let postContent;
 
@@ -55,18 +50,23 @@ class SinglePost extends Component {
     }else{
       // console.log(post.post)
       postContent = 
-        <Container>
-        <CardItem post={post} style={{margin: "10px auto"}}/>
-        <CommentForm postId={post._id}/>
-        <CommentFeed postId={post._id} comments={post.comments}/>
-      </Container>
+        <Container style={{height: '100vh', width: '99%', margin: "5px auto"}}>
+          <CardItem post={post}/>
+          <CommentForm postId={post._id}/>
+          <CommentFeed postId={post._id} comments={post.comments}/>
+        </Container>
     }
     return (
-      <div style={styles.box}>
-        <Link to="/posts">
-          <Button icon='arrow left' style={{float:"left"}}/>
-        </Link>
-        {postContent}
+      <div style={{height: '100vh', width: '99%', margin: "5px auto"}}>
+        <div style= {{height:'15%',margin: "5px auto"}}>
+          <Link to="/posts">
+            <Button icon='arrow left' style={{float:"left"}}/>
+          </Link>
+          <PrintButton id={"postContent"} label={"Print comments"} />
+        </div>
+        <div id="postContent">
+          {postContent}
+        </div>
       </div>
     )
   }

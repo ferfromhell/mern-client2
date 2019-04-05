@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import { Card } from 'semantic-ui-react';
 import MessageItem from './MessageItem'
-import { messageReceived } from '../../actions/chatActions';
+// import { messageReceived } from '../../actions/chatActions';
 import {connect} from 'react-redux';
 
 class MessagesList extends Component {

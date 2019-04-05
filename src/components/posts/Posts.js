@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PostForm from './PostForm';
 import Loading from '../Loading';
 import PostFeed from './PostFeed';
+// import PrintButton from './PrintButton';
 
 // import CanvasDraw from 'react-canvas-draw';
 
@@ -28,10 +29,13 @@ class Posts extends Component {
 
     return (
       <div style={{height: '100vh', width: '99%', margin: "5px auto"}}>
+        {/* <PrintButton id={"postsContent"} label={"Print posts"}/> */}
         <div style={{ }}>
           <PostForm/>
         </div>
-        {postContent}
+        <div id="postsContent">
+          {postContent}
+        </div>
       </div>
     )
   }
